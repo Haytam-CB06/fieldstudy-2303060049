@@ -1,55 +1,34 @@
 # Coacheey website field study
 
 **Student:** Haytam CHARAFI | **Number:** 2303060049  
-**Course:** SFWE475 / CPRG201 | **Website:** https://coacheey.com/  
-**Organisation/brand:** Coacheey | **Prepared:** 10 November 2026
+**Course:** SFWE475 / CPRG201 | **Website:** https://coacheey.com/
 
-Status: AI-assisted review package prepared for student review. Evidence gaps and authorship restrictions remain; no full-mark or submission-ready claim is made.
+**Organisation/brand:** Coacheey  
+**Tiers attempted:** Core; Stretch S1 and partial S2; AI-assisted Challenge demo  
+**Recorded audit dates:** Lighthouse runs on 9 November UTC, with the Eversports run on 10 November in Europe/Bucharest; other capture dates remain unrecorded  
+**Recorded export environment:** Chrome 156 on 64-bit Windows, desktop formFactor; full build not available from the reduced user-agent
 
-## Purpose and scope
+**Start with `REVIEW-AND-FILL.md`.** This is the only remaining fill-in checklist. The report contains no blank answer placeholders: missing evidence is stated honestly. The checklist separates required student actions from optional improvements.
 
-The study examines public coach discovery and group-event browsing: HTTP delivery, URL structure, caching, initial HTML, metadata, search states, labels, keyboard access and automated accessibility checks. No account access, actual booking, payment or message submission is included.
-
-The student's genuine-use basis, LMS site claim and exact course deadline/access arrangements still need confirmation. The fieldwork browser version and most screenshot capture times were not recorded; those values have not been invented.
-
-## Deliverables
-
-| Path | Contents and status |
+| Location | Purpose |
 |---|---|
-| `report.pdf` | Core A-C: six main pages with selected screenshots, plus evidence-log appendix. Contains explicit incomplete checks. |
-| `owner-summary.pdf` | One-page owner-facing summary of two strengths and three priorities. |
-| `evidence/` | Student-supplied website screenshots and original Lighthouse HTML exports, including the benchmark. |
-| `stretch/benchmark.pdf` | Six-check comparison with Eversports: A1, A4, A6, A7, B6 and B7; includes limitations and three lessons. |
-| `stretch/usability-test.pdf` | Partial one-participant record. Task timings and observation procedure were not documented; chronology needs confirmation. |
-| `fix/` | Original React/Vite discovery demo; AI-assisted implementation and verification. Student review and course-policy confirmation required. |
-| `fix/verification/` | Clearly labelled AI-run local-demo checks and after screenshots; not student fieldwork evidence. |
-| `drafts/` | Original templates, review text and student-reported notes. `*-review.md` files are AI-assisted review drafts. |
-| `guides/` | Working procedures and remaining-review checklist. Earlier template guides may describe work subsequently completed. |
+| `report.pdf` | Six main Core pages with screenshots, plus evidence-log appendix |
+| `owner-summary.pdf` | One-page owner-facing summary |
+| `stretch/benchmark.pdf` | Six-check Eversports comparison |
+| `stretch/usability-test.pdf` | Partial volunteer-test record with explicit missing timings/procedure |
+| `review/` | Four complete editable documents and the evidence-log CSV |
+| `evidence/` | Retained student-supplied site screenshots and Lighthouse exports |
+| `fix/` | Original standalone React/Vite demo; README, code and verification |
+| `tools/` | Optional PDF exporter and pinned Python requirements |
 
-The screenshot dates are distinct from Lighthouse audit timestamps. Coacheey Lighthouse scores are 94 (home) and 93 (Events); Eversports home scored 100 but its export still includes a label/name mismatch audit. No score establishes full accessibility.
+**Main purpose:** Coacheey helps visitors find coaches to book training sessions; it also lists group events. This purpose was confirmed by the student. Public-page scope: coach discovery and event browsing. No login, booking, payment or message submission was performed. The student's genuine-use basis and LMS claim remain to be confirmed. Missing capture times and checks are explicitly stated, not invented. Four local work commits and a merge exist on 10 November 2026; this does not meet the three-day requirement. Nothing has been pushed.
 
-## Challenge: run locally
+Student-reported deadline: 10 November 2026 at 14:00; confirm the exact LMS deadline and approved repository access before submitting. The assignment's generic timeline does not replace the student/instructor-specific deadline.
 
-```sh
-cd fix
-npm ci
-npm run dev
-```
+To run the Challenge, open a terminal in `fix/`, run `npm ci` if needed, then `npm run dev`. The production build and 15 AI-run local browser checks passed. See `fix/README.md` for the design decision and before/after comparison; student review and permitted-assistance confirmation remain necessary.
 
-Open the printed localhost URL. See `fix/README.md` for the original problem/evidence, design decision, before/after comparison, verification and production build commands. No site code, text, photos or actual session data was copied.
+## AI assistance
 
-## Remaining review
+AI assisted organisation, procedural guidance, interpretation of student-supplied evidence, drafting/editing, PDF layout, and the Challenge implementation and local verification. The wording/code are not unaided student work. Review, understand and revise them, disclose assistance accurately, and use only assistance permitted by the instructor.
 
-1. Review/revise the AI-generated wording against your own observations, and confirm the permitted scope of assistance with the instructor.
-2. Confirm original dates/times, browser/version, exact URLs and any missing measurements from genuine records. Unknown values must stay unknown if not recorded.
-3. Core limitations include unrecorded loading capture intervals, no safe validation test, unverified sort/label-click behaviour, and incomplete request-resource URL transcription.
-4. Confirm whether the volunteer task outcomes came from 6 November or a later follow-up. A retrospective ten-minute browsing session is not a complete timed S2 test.
-5. Inspect and understand the Challenge code; perform your own manual checks and capture your own after evidence if required.
-6. Git requires four meaningful commits over three genuine days. All newly created commits use real dates; three-day history cannot be fabricated or recovered retrospectively.
-7. Submit the repository link only after verifying the files on `main` and instructor-approved access. The assignment prohibits public sharing of the report but also asks for logged-out repository access; clarify that conflict before uploading reports to a public repository. No owner contact is authorised.
-
-## AI assistance disclosure
-
-AI assisted repository organisation, templates, procedural guidance, interpretation of student-supplied evidence, drafting/editing the review text, PDF layout, and the Challenge implementation and local verification. The generated wording and code are not unaided student work. The student must verify, understand and revise them, and use only assistance permitted by the instructor.
-
-Live-site screenshots in `evidence/` were supplied by the student. Earlier AI-captured A2 reference material was kept outside this repository and is excluded from the student's evidence. Local Challenge screenshots in `fix/verification/` were captured by AI and are labelled accordingly. No uncollected timings, participant quotes, observations or historical commits have been invented.
+Website evidence was supplied by the student. AI-generated live-site reference captures are excluded. Local demo after screenshots/checks are clearly labelled in `fix/verification/` and must not be presented as student fieldwork. Reports remain within the course; clarify approved repository access before any public upload.

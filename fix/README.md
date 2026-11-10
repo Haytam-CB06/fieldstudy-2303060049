@@ -1,73 +1,77 @@
 # Accessible discovery - Challenge demonstration
 
-An original, standalone React/Vite demonstration of clearly named discovery filters and keyboard-operable sport shortcuts. It uses invented classes, places and text. It makes no requests to Coacheey or Eversports and performs no bookings, authentication or submissions to an external service.
+This standalone React/Vite project addresses the discovery-control problems recorded in B5 and B6. It uses fictional sessions and locations, original text and its own styling. No live-site code or assets were copied into the implementation, and the app has no connection to Coacheey, Eversports or a booking service.
 
-## Problem and baseline
+## Problem and scope
 
-- **B5:** Coacheey's location, sport and language combobox inspections have empty computed accessible names. The visible values are not stable field names. See `../evidence/B5-location-accessibility.png`, `B5-sport-accessibility.png` and `B5-language-accessibility-detail.png` (last is a contextual crop).
-- **B6:** the student reported that Tab skipped the homepage sport shortcuts, while a mouse click on Yoga opened results. This is a task observation, not a DOM or whole-site conformance audit. See `../drafts/B6-keyboard-notes.md`.
+The location, sport and language inspections expose empty computed accessible names. The recorded keyboard task also skipped sport shortcuts that worked with a mouse. Together, these make a central task harder to identify or operate without a mouse.
 
-The improvement focuses on the same discovery task: identify each filter, choose a sport with the keyboard, then read matching results.
+Baseline evidence: [location](../evidence/B5-location-accessibility.png), [sport](../evidence/B5-sport-accessibility.png), [language detail](../evidence/B5-language-accessibility-detail.png) and [Core B6 account](../review/report.md). The language image is a contextual crop, and B6 is a reported task observation rather than a DOM audit.
+
+The demo keeps the scope small: name each filter, offer keyboard-operable sport shortcuts, apply filters without losing values, and recover from an empty result. It is a demonstration of the idea, not a patch deployed to the audited service.
 
 ## Run locally
 
-Prerequisite: a Node.js version supported by the installed Vite version (development used Node 22.17.0). Exact package versions are pinned in `package.json` and `package-lock.json`.
+Development used Node 22.17.0. Dependencies are pinned in package.json and package-lock.json.
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Open the localhost URL printed in the terminal. For a production build:
+Open the printed localhost address. To build and preview:
 
 ```sh
 npm run build
 npm run preview
 ```
 
-The development and preview servers bind to `127.0.0.1`. Do not expose or deploy the demo as the actual service.
+Both servers bind to 127.0.0.1. The project does not send form data, register users or make bookings.
 
-## One design decision
+## Design decision
 
-Use native `select` elements and explicit `label`/`htmlFor` associations rather than custom comboboxes. This gives every filter a persistent name and familiar platform keyboard behaviour with less interaction code. The trade-off is reduced visual control over the opened options. Sport shortcuts are native buttons, with `aria-pressed` reflecting the applied sport. A visible focus outline and a skip link help keyboard navigation.
+Native `select` elements with explicit `label`/`htmlFor` associations replace custom combobox behaviour. This gives each field a persistent purpose name and familiar keyboard interaction with less custom event handling. The trade-off is less control over the opened menu's appearance. The sport shortcuts are native buttons, with `aria-pressed` reflecting the applied sport. A visible focus outline and skip link support the same keyboard journey.
 
-Form values are applied on search and remain selected. Results use a polite status message; an impossible query leads to an explanatory empty state and a button to restore all examples. No form validation claim is made: all search fields are optional.
+Filters are applied on submission and retained afterward. A polite status message reports the result count; the empty state offers a clear reset. All fields are optional, so this project does not claim to fix the untested B4 validation behaviour.
 
-## Before and after
+## Before and after - actual results
 
-| Check | Original evidence | Demo acceptance criterion |
+The **before** column uses student-supplied Coacheey evidence. The **after** column is AI-run verification of this local demo, not student fieldwork. Detailed results, time and browser are in [verification-results.json](verification/verification-results.json).
+
+| Check | Before: recorded Coacheey behaviour | After: verified demo behaviour |
 |---|---|---|
-| Location name | Empty computed Name in B5 location capture | Native select's computed name is Location |
-| Sport name | Empty computed Name in B5 sport capture | Native select's computed name is Sport |
-| Language name | Empty computed Name in cropped B5 language detail | Native select's computed name is Session language |
-| Label association | Original inspected controls lack specified associated label | Clicking each demo label focuses its field |
-| Sport shortcut | Student reports Yoga skipped by Tab, mouse opens results | Tab reaches Yoga; Enter filters results; focus remains visible |
-| Empty query recovery | Coacheey B2 already has explanatory guidance | Demo returns zero results for zzzqqq; Show all sessions restores four |
+| Three filter names | Location, sport and language computed names are empty | Three named comboboxes: Location, Sport, Session language |
+| Label association | No associated label specified in the inspected filter details | All four label clicks focused their corresponding fields |
+| Yoga shortcut | Not reached with Tab in the recorded task; mouse click opens results | Reached in seven Tab presses after main; visible focus; Enter returns two fictional Yoga sessions |
+| Selection retention | Not measured as an original-site improvement baseline | Yoga and French remain selected after applying a zero-result combination |
+| Empty-state recovery | B2 already explains no matches and suggests recovery | zzzqqq produces an empty state; Show all sessions restores all four examples |
+| Small-screen layout | No controlled original-site comparison claimed | No horizontal overflow at a 390 CSS-pixel viewport |
 
-Original-site observations and local-demo verification have different provenance. AI-run local screenshots/measurements belong in `verification/`, not in the student's original website screenshot evidence. They must not be presented as student-taken captures. A separate verification record states actual checks and results; acceptance criteria above are not proof that a check passed.
+The production build and all 15 local browser checks passed. See the [verification record](verification/verification.md). These measurements do not imply full accessibility, production suitability or a causal whole-page Lighthouse improvement. The different starting points also mean the seven-Tab count is not a before/after speed metric.
 
-This is a small standalone demo, not a production patch. A different whole-page Lighthouse score would not isolate the effect of labels, so no score-based improvement is claimed.
+### Original inspection
+
+![Student-supplied original location inspection](../evidence/B5-location-accessibility.png)
+
+### Demo after the change
+
+![AI-captured demo with persistent labels](verification/after-labelled-controls.png)
+
+![AI-captured Yoga result after Tab and Enter](verification/after-keyboard-yoga.png)
 
 ## Manual review to perform yourself
 
-1. Tab from the address bar: the skip link should appear. Activate it to move to main content.
-2. Click each visible field label and confirm the matching input/select receives focus.
-3. Use Tab to reach Yoga, press Enter and confirm two Yoga examples.
-4. Select French and Yoga, then Find sessions: zero examples match. Confirm the selected values remain.
-5. Choose Show all sessions: four examples return, with all filters reset.
-6. In DevTools Accessibility, confirm the three combobox names and values separately.
+1. Tab from the address bar and activate the visible skip link.
+2. Click each visible label; confirm its field receives focus.
+3. Reach Yoga with Tab, press Enter and confirm two results.
+4. Apply Yoga and French, then confirm zero matches without losing the selections.
+5. Use Show all sessions; confirm four examples and reset fields.
+6. Inspect each combobox name separately from its value.
 
-Record actual outcomes and capture your own after screenshots if the instructor requires student-created Challenge evidence.
+Record actual results and, if required, capture your own after screenshots in verification/student/. Existing after images are AI-captured and remain labelled as such.
 
-## Authorship and assistance
+## Assistance and originality
 
-This implementation and its initial verification were prepared with AI assistance from the student's supplied B5 evidence and B6 observations. It is original demonstration code, not copied from either audited website. The student must inspect, understand and revise it, disclose assistance, and confirm with the instructor that this degree of assistance is permitted for the Challenge. It must not be claimed as unaided student code.
+AI prepared this implementation and its initial local verification from the supplied evidence and observations. It is original demonstration code, not copied site code, but it is not unaided student work. The student must inspect, understand and revise it, disclose the assistance and confirm that this degree of help is permitted for the Challenge. The same distinction applies to the after screenshots and measurements.
 
 Documentation consulted: [React createRoot](https://react.dev/reference/react-dom/client/createRoot), [Vite guide](https://vite.dev/guide/), [MDN label element](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/label).
-
-
-## Verified results
-
-The production build and all 15 local browser checks passed. See [verification record](verification/verification.md) and [machine-readable results](verification/verification-results.json). These checks were run by AI, not by the student.
-
-![AI-captured after view of labelled controls](verification/after-labelled-controls.png)
