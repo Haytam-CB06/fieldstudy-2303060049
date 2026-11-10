@@ -1,0 +1,13 @@
+# Local/editor files
+.DS_Store
+Thumbs.db
+~$*
+*.tmp
+node_modules/
+.next/
+dist/
+.env
+.env.*
+!.env.example
+# Keep final PDFs, original screenshots and Lighthouse reports tracked.
+
