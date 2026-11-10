@@ -1,0 +1,84 @@
+{
+  "provenance": "AI-run local-demo verification; not student website fieldwork",
+  "verifiedAt": "2026-11-10T00:22:11.455Z",
+  "url": "http://127.0.0.1:5174/#main",
+  "browser": "156.0.8078.80",
+  "checks": [
+    {
+      "name": "Accessible filter names",
+      "passed": true,
+      "detail": "- main:\n  - paragraph: A little movement, a little more possibility\n  - heading \"Find your next session.\" [level=1]\n  - paragraph: Choose a place, a sport and a language. Every example below is fictional.\n  - region \"Choose what works for you\":\n    - heading \"Choose what works for you\" [level=2]\n    - form \"Choose what works for you\":\n      - text: Session name\n      - searchbox \"Session name\"\n      - text: Location\n      - combobox \"Location\":\n        - option \"Any location\" [selected]\n        - option \"River Studio\"\n        - option \"North Hall\"\n      - text: Sport\n      - combobox \"Sport\":\n        - option \"Any sport\" [selected]\n        - option \"Yoga\"\n        - option \"Pilates\"\n        - option \"Strength\"\n      - text: Session language\n      - combobox \"Session language\":\n        - option \"Any language\" [selected]\n        - option \"English\"\n        - option \"French\"\n      - button \"Find sessions\"\n      - button \"Clear filters\"\n      - text: Your selections stay in place when you search.\n  - region \"Start with a sport\":\n    - heading \"Start with a sport\" [level=2]\n    - button \"Yoga\"\n    - button \"Pilates\"\n    - button \"Strength\"\n  - region \"Available sessions\":\n    - heading \"Available sessions\" [level=2]\n    - status: 4 sessions found\n    - list:\n      - listitem:\n        - article:\n          - text: Yoga\n          - heading \"Steady Start\" [level=3]\n          - paragraph: River Studio\n          - paragraph: English \u00b7 45 minutes\n      - listitem:\n        - article:\n          - text: Strength\n          - heading \"Everyday Strength\" [level=3]\n          - paragraph: North Hall\n          - paragraph: French \u00b7 60 minutes\n      - listitem:\n        - article:\n          - text: Pilates\n          - heading \"Move With Ease\" [level=3]\n          - paragraph: River Studio\n          - paragraph: French \u00b7 50 minutes\n      - listitem:\n        - article:\n          - text: Yoga\n          - heading \"A Quiet Hour\" [level=3]\n          - paragraph: North Hall\n          - paragraph: English \u00b7 60 minutes"
+    },
+    {
+      "name": "Label focuses session-query",
+      "passed": true,
+      "detail": "actual label click"
+    },
+    {
+      "name": "Label focuses session-location",
+      "passed": true,
+      "detail": "actual label click"
+    },
+    {
+      "name": "Label focuses session-sport",
+      "passed": true,
+      "detail": "actual label click"
+    },
+    {
+      "name": "Label focuses session-language",
+      "passed": true,
+      "detail": "actual label click"
+    },
+    {
+      "name": "First Tab reaches visible skip link",
+      "passed": true,
+      "detail": "skip link first in tab order"
+    },
+    {
+      "name": "Skip link moves to main",
+      "passed": true,
+      "detail": "native fragment navigation"
+    },
+    {
+      "name": "Yoga reached by Tab",
+      "passed": true,
+      "detail": "7 Tab presses after main"
+    },
+    {
+      "name": "Yoga focus visible",
+      "passed": true,
+      "detail": "focus-visible and outline present"
+    },
+    {
+      "name": "Enter applies Yoga shortcut",
+      "passed": true,
+      "detail": "two matching cards and selected sport"
+    },
+    {
+      "name": "Search preserves filters",
+      "passed": true,
+      "detail": "Yoga + French retained with zero matches"
+    },
+    {
+      "name": "Recovery clears filters",
+      "passed": true,
+      "detail": "four sample records restored"
+    },
+    {
+      "name": "Impossible query empty state",
+      "passed": true,
+      "detail": "query retained and recovery available"
+    },
+    {
+      "name": "Mobile layout does not overflow",
+      "passed": true,
+      "detail": "390 CSS px viewport"
+    },
+    {
+      "name": "No runtime page errors",
+      "passed": true,
+      "detail": "[]"
+    }
+  ],
+  "errors": []
+}
