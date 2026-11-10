@@ -70,9 +70,9 @@ Editable sources map directly to outputs:
 
 After updating sources, regenerate with python tools/export-pdfs.py. If needed, install the dependencies using python -m pip install -r tools/requirements.txt. Keep the six main-page limit and the one-page owner summary. Review the PDFs after export; do not submit stale versions.
 
-- **Git history:** four work commits and a merge exist on 10 November. The required three genuine work days are not met. Keep the real dates and ask the instructor how this will be assessed; it cannot be repaired by backdating.
+- **Git history:** the reviewed package is committed locally and merged into main. All local work commits are on 10 November. The required three genuine work days are not met. Keep the real dates and ask the instructor how this will be assessed; it cannot be repaired by backdating.
 - **Repository access:** reports must stay within the course, while the instructions also ask for a logged-out repository check. Confirm the instructor-approved access arrangement before uploading reports publicly.
-- **Final delivery:** commit your genuine review changes on assignment/field-study, merge to main, push the approved package, check access, and submit the repository link on LMS. The assistant has not pushed or submitted it.
+- **Final delivery:** after making your own review changes, commit them on assignment/field-study and merge to main. Then push the approved package, check access, and submit the repository link on LMS. The assistant has not pushed or submitted it.
 - **Deadline:** you previously stated 10 November 2026 at 14:00. Verify the actual LMS deadline and timezone.
 
 This file is a working checklist, not evidence of completed tests. You may keep it out of the submitted package after resolving the actions; retain honest limitations in the report where gaps remain.

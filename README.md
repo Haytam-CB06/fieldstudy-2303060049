@@ -21,7 +21,7 @@
 | `fix/` | Original standalone React/Vite demo; README, code and verification |
 | `tools/` | Optional PDF exporter and pinned Python requirements |
 
-**Main purpose:** Coacheey helps visitors find coaches to book training sessions; it also lists group events. This purpose was confirmed by the student. Public-page scope: coach discovery and event browsing. No login, booking, payment or message submission was performed. The student's genuine-use basis and LMS claim remain to be confirmed. Missing capture times and checks are explicitly stated, not invented. Four local work commits and a merge exist on 10 November 2026; this does not meet the three-day requirement. Nothing has been pushed.
+**Main purpose:** Coacheey helps visitors find coaches to book training sessions; it also lists group events. This purpose was confirmed by the student. Public-page scope: coach discovery and event browsing. No login, booking, payment or message submission was performed. The student's genuine-use basis and LMS claim remain to be confirmed. Missing capture times and checks are explicitly stated, not invented. The reviewed package is committed locally and merged into main. All local work commits are dated 10 November 2026, so the three-day requirement is not met. Nothing has been pushed.
 
 Student-reported deadline: 10 November 2026 at 14:00; confirm the exact LMS deadline and approved repository access before submitting. The assignment's generic timeline does not replace the student/instructor-specific deadline.
 
